@@ -1,0 +1,16 @@
+name: sub
+services:
+  junk:
+    command:
+    - tail
+    - -f
+    - /dev/null
+    image: busybox
+    networks:
+      default: null
+    volumes:
+    - type: bind
+      source: ../
+      target: /var/www/html
+      consistency: cached
+    working_dir: /var/www/html
